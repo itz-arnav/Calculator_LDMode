@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    --bg: #1d1f20;
+    --bd: rgba(255, 255, 255, 0.03);
+    --switcher-bg: #232527;
+    --shadow-color: #4b4b4b36;
+    --color-text: #eee;
+    --color-text-lt: #aaa;
+    --color-text-active: #2AB2A6;
+    --color-arrow: #88888852;
+    --normal-key: #0d181a2b;
+    --operator: #0C4548;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+  }
+  
+  html[data-theme='light'] {
+    --bg: #FCFCFC;
+    --bd: rgba(0, 0, 0, 0.03);
+    --switcher-bg: #fff;
+    --shadow-color: #51515144;
+    --color-text: #656565;
+    --color-text-lt: #9a9a9a;
+    --color-text-active: #2AB2A6;
+    --color-arrow: #656565;
+    --normal-key: #F4F4F4;
+    --operator: #C2EEEB;
+    --box-shadow: rgba(255, 255, 255, 0.2);
+  }
+
+  body{
+    background: url("https://img.freepik.com/free-vector/abstract-background-design-emerald-green_53876-43540.jpg?w=1060&t=st=1686601426~exp=1686602026~hmac=acf8ddbee95b9012a00282758a8fc857772bf08936967f9868406e413c721a5f");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    backdrop-filter: blur(7px) saturate(159%);
+    -webkit-backdrop-filter: blur(7px) saturate(159%);
+    background-color: rgba(17, 25, 40, 0.8);
+}
+
+.leftSection{
+    background-color: var(--switcher-bg);
+    width: 16rem;
+    height: 28rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 0px 19px 5px var(--box-shadow);
+    transition: all 300ms ease-in-out;
+    color: var(--color-text);
+}
+
+.topSection{
+    height: 40%;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+}
+
+
+
+.modeSwitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switcher {
+    user-select: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 16px;
+    box-shadow: 0px 0px 6px -2px #888;
+    background: var(--switcher-bg);
+}
+
+
+.switcher .arrow {
+    margin: 0px 20px;
+    color: var(--color-arrow);
+}
+
+.switcher input[type=checkbox] {
+    height: 0;
+    width: 0;
+    display:none;
+    
+}
+
+.switcher input[type=checkbox] + div > i {
+    color: #999;
+}
+
+
+
+.switcher input[type=checkbox]:checked + div .arrow {
+    transform: rotate(-180deg);
+    transition: all 400ms ease-in-out;
+}
+.switcher input[type=checkbox]:not(:checked) + div .arrow {
+    transform: rotate(0deg);
+    transition: all 400ms ease-in-out;
+}
+
+.switcher input[type=checkbox]:checked + div > :first-child {
+    color: var(--color-text-active);
+}
+
+.switcher input[type=checkbox]:not(:checked) + div > :last-child {
+    color: var(--color-text-active);
+}
+  
+
+.resultDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+}
+
+.calculation{
+    font-weight: 300;
+    color: var(--color-text-lt);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.resultValue{
+    font-size: 2.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bottomSection{
+    height: 60%;
+    display: flex;
+}
+
+.buttonSection {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a1 a2 a3 a4"
+    "b1 b2 b3 b4"
+    "c1 c2 c3 c4"
+    "d1 d2 d3 d4"
+    "e1 e2 e3 e3";
+}
+
+.buttonSection > div:nth-child(-n+16) {
+    grid-area: auto;
+}
+
+.buttonSection > div:nth-child(17){
+    grid-area: e1;
+}
+.buttonSection > div:nth-child(18) {
+    grid-area: e2;
+}
+
+.buttonSection > div:nth-child(19) {
+    grid-area: e3;
+}
+
+.buttonSection > div:nth-child(20) {
+    grid-area: e3;
+}
+
+.key{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: var(--normal-key);
+    border: 1px solid var(--bd);
+}
+
+.action, .operator{
+    background-color: var(--operator);
+}
+
+.calculate{
+    background-color: #2AB2A6;
+    color: #fff;
+    border-bottom-right-radius: 0.8rem;
+}
+
+.zero{
+    border-bottom-left-radius: 0.8rem;
+}
+
+.op, .percent, .brackets{
+    color: orangered;
+}
+
+
+/* Right Section */
+
+.rightSection{
+    background-color: var(--switcher-bg);
+    width: 28rem;
+    height: 28rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 0px 19px 5px var(--box-shadow);
+    transition: all 300ms ease-in-out;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titleRight{
+    font-size: 2rem;
+    color: var(--color-text);
+    text-transform: uppercase;
+}

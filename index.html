@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Modern Calculator</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="leftSection">
+				<div class="topSection">
+					<div class="modeSwitch">
+						<label class="switcher">
+						  <input type="checkbox" name="theme-switcher">
+						  <div>
+							<i class="fas fa-sun"></i>
+							<i class="fas fa-arrow-right arrow"></i>
+							<i class="fas fa-moon"></i>  
+						  </div>
+						</label>
+					  </div>
+					  
+					<div class="resultDisplay">
+						<div class="calculation">0</div>
+						<div class="resultValue">0</div>
+					</div>
+				</div>
+				<div class="bottomSection">
+					<div class="buttonSection">
+						<div data-key="clear" class="key action">
+							<span>C</span>
+						</div>
+
+						<div data-key="backspace" class="key action">
+							<span class="material-symbols-outlined"> arrow_back </span>
+						</div>
+
+						<div data-key="brackets" class="key action">
+							<span>( )</span>
+						</div>
+
+						<div data-key="/" class="key operator">
+							<span class="material-symbols-outlined"> pen_size_2 </span>
+						</div>
+
+						<div data-key="7" class="key">
+							<span>7</span>
+						</div>
+
+						<div data-key="8" class="key">
+							<span>8</span>
+						</div>
+
+						<div data-key="9" class="key">
+							<span>9</span>
+						</div>
+
+						<div data-key="*" class="key operator">
+							<span class="material-symbols-outlined"> close </span>
+						</div>
+
+						<div data-key="4" class="key">
+							<span>4</span>
+						</div>
+
+						<div data-key="5" class="key">
+							<span>5</span>
+						</div>
+
+						<div data-key="6" class="key">
+							<span>6</span>
+						</div>
+
+						<div data-key="-" class="key operator">
+							<span class="material-symbols-outlined"> remove </span>
+						</div>
+
+						<div data-key="1" class="key">
+							<span>1</span>
+						</div>
+
+						<div data-key="2" class="key">
+							<span>2</span>
+						</div>
+
+						<div data-key="3" class="key">
+							<span>3</span>
+						</div>
+
+						<div data-key="+" class="key operator">
+							<span class="material-symbols-outlined"> add </span>
+						</div>
+
+						<div data-key="0" class="key zero">
+							<span>0</span>
+						</div>
+
+						<div data-key="." class="key">
+							<span>.</span>
+						</div>
+
+						<div data-key="=" class="key operator calculate">
+							<span>=</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightSection">
+				<h2 class="titleRight">History</h2>
+				<div class="historySection">
+					.
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
